@@ -67,7 +67,7 @@ public class ArvoreBinaria {
 
 	public void mostrarPorNivel() {
 		if (raiz == null) {
-			System.out.println("¡rvore vazia!");
+			System.out.println("√Årvore vazia!");
 			return;
 		}
 		Queue<Nodo> fila = new LinkedList<>();
@@ -111,7 +111,7 @@ public class ArvoreBinaria {
 				return raiz.esq;
 			} else {
 				// Case node has both leafs
-				// NÛ sucessor ser· o menor da subarvore da direita
+				// N√≥ sucessor ser√° o menor da subarvore da direita
 				Nodo sucessor = encontraSucessor(raiz.dir);
 				// changed the value node will be removed for the next
 				raiz.chave = sucessor.chave;
@@ -132,7 +132,7 @@ public class ArvoreBinaria {
 	// Exercicio letra A
 	public void mostrarMaiorNumero() {
 		if (raiz == null) {
-			System.out.println("¡rvore vazia!");
+			System.out.println("√Årvore vazia!");
 			return;
 		}
 
@@ -141,13 +141,13 @@ public class ArvoreBinaria {
 			nodoAtual = nodoAtual.dir;
 		}
 
-		System.out.println("Maior n˙mero na ·rvore: " + nodoAtual.chave);
+		System.out.println("Maior n√∫mero na √°rvore: " + nodoAtual.chave);
 	}
 
 	// Exercicio letra B
 	public void mostrarMenorNumero() {
 		if (raiz == null) {
-			System.out.println("¡rvore vazia!");
+			System.out.println("√Årvore vazia!");
 			return;
 		}
 
@@ -156,7 +156,7 @@ public class ArvoreBinaria {
 			nodoAtual = nodoAtual.esq;
 		}
 
-		System.out.println("Menor n˙mero na ·rvore: " + nodoAtual.chave);
+		System.out.println("Menor n√∫mero na √°rvore: " + nodoAtual.chave);
 	}
 
 	// Exercicio letra C
@@ -170,7 +170,7 @@ public class ArvoreBinaria {
 		}
 
 		if (nivelAtual == nivelDesejado) {
-			System.out.println("NÛ no nÌvel " + nivelDesejado + ": " + raiz.chave);
+			System.out.println("N√≥ no n√≠vel " + nivelDesejado + ": " + raiz.chave);
 		} else {
 			mostrarNoNivel(raiz.esq, nivelDesejado, nivelAtual + 1);
 			mostrarNoNivel(raiz.dir, nivelDesejado, nivelAtual + 1);
@@ -228,14 +228,14 @@ public class ArvoreBinaria {
 	    Nodo nodo = buscarNodo(raiz, chave);
 
 	    if (nodo == null) {
-	        System.out.println("NÛ n„o encontrado.");
+	        System.out.println("N√≥ n√£o encontrado.");
 	        return;
 	    }
-	    System.out.print("\nSub·rvore ‡ direita do nÛ " + chave + ": ");
+	    System.out.print("\nSub√°rvore √† direita do n√≥ " + chave + ": ");
 	    if (nodo.dir != null) {
 	        mostrarSubArvore(nodo.dir);
 	    } else {
-	        System.out.print("Nenhum nÛ na sub·rvore ‡ direita.");
+	        System.out.print("Nenhum n√≥ na sub√°rvore √† direita.");
 	    }
 	}
 
@@ -263,14 +263,14 @@ public class ArvoreBinaria {
 	public void mostrarSubArvoreEsquerda(int chave) {
 	    Nodo nodo = buscarNodo(raiz, chave);
 	    if (nodo == null) {
-	        System.out.println("NÛ n„o encontrado.");
+	        System.out.println("N√≥ n√£o encontrado.");
 	        return;
 	    }
-	    System.out.print("\nSub·rvore ‡ esquerda do nÛ " + chave + ": ");
+	    System.out.print("\nSub√°rvore √† esquerda do n√≥ " + chave + ": ");
 	    if (nodo.esq != null) {
 	        mostrarSubArvore(nodo.esq);
 	    } else {
-	        System.out.println(" Nenhum nÛ na sub·rvore ‡ esquerda.");
+	        System.out.println(" Nenhum n√≥ na sub√°rvore √† esquerda.");
 	    }
 	}
 	// Exercicio letra H
@@ -321,7 +321,7 @@ public class ArvoreBinaria {
 
 	// Exercicio letra I
 	public void mostrarNumerosPares() {
-		System.out.print("N˙meros pares na ·rvore: ");
+		System.out.print("N√∫meros pares na √°rvore: ");
 		mostrarNumerosParesRecursivo(raiz);
 		System.out.println();
 	}
@@ -345,13 +345,13 @@ public class ArvoreBinaria {
 
 	private String mostrarNivelRecursivo(Nodo raiz, int chave, int nivelAtual) {
 		if (raiz == null) {
-			return "\nNÛ com chave " + chave + " n„o encontrado.";
+			return "\nN√≥ com chave " + chave + " n√£o encontrado.";
 		}
 		if (raiz.chave == chave) {
-			return "\nNÌvel do nÛ com chave " + chave + ": " + nivelAtual;
+			return "\nN√≠vel do n√≥ com chave " + chave + ": " + nivelAtual;
 		}
 		String mensagemEsquerda = mostrarNivelRecursivo(raiz.esq, chave, nivelAtual + 1);
-		if (!mensagemEsquerda.contains("n„o encontrado")) {
+		if (!mensagemEsquerda.contains("n√£o encontrado")) {
 			return mensagemEsquerda;
 		}
 		String mensagemDireita = mostrarNivelRecursivo(raiz.dir, chave, nivelAtual + 1);
@@ -372,7 +372,7 @@ public class ArvoreBinaria {
 		int alturaDireita = calcularAlturaRecursivo(raiz.dir, false);
 		int altura = Math.max(alturaEsquerda, alturaDireita) + 1;
 		if (imprimir) {
-			System.out.println("Altura da ·rvore: " + altura);
+			System.out.println("Altura da √°rvore: " + altura);
 		}
 		return altura;
 	}
@@ -391,35 +391,40 @@ public class ArvoreBinaria {
 		int tamanhoDireita = calcularTamanhoRecursivo(raiz.dir, false);
 		int tamanho = tamanhoEsquerda + tamanhoDireita + 1;
 		if (imprimir) {
-			System.out.println("Tamanho da ·rvore: " + tamanho);
+			System.out.println("Tamanho da √°rvore: " + tamanho);
 		}
 		return tamanho;
 	}
 
 	// exercicio Letra M
 	public void inserirNaoRecursivo(int chave) {
-		Nodo novoNodo = new Nodo(chave);
-		if (raiz == null) {
-			raiz = novoNodo;
-			return;
-		}
-		Nodo nodoAtual = raiz;
-		Nodo pai;
-		while (true) {
-			pai = nodoAtual;
-			if (chave < nodoAtual.chave) {
-				nodoAtual = nodoAtual.esq;
-				if (nodoAtual == null) {
-					pai.esq = novoNodo;
-					return;
-				}
-			} else {
-				nodoAtual = nodoAtual.dir;
-				if (nodoAtual == null) {
-					pai.dir = novoNodo;
-					return;
-				}
-			}
-		}
+	    if (buscarNodo(raiz, chave) != null) {
+	        System.out.println("N√∫mero j√° existe na √°rvore: " + chave);
+	        return;
+	    }
+
+	    Nodo novoNodo = new Nodo(chave);
+	    if (raiz == null) {
+	        raiz = novoNodo;
+	        return;
+	    }
+	    Nodo nodoAtual = raiz;
+	    Nodo pai;
+	    while (true) {
+	        pai = nodoAtual;
+	        if (chave < nodoAtual.chave) {
+	            nodoAtual = nodoAtual.esq;
+	            if (nodoAtual == null) {
+	                pai.esq = novoNodo;
+	                return;
+	            }
+	        } else {
+	            nodoAtual = nodoAtual.dir;
+	            if (nodoAtual == null) {
+	                pai.dir = novoNodo;
+	                return;
+	            }
+	        }
+	    }
 	}
 }
